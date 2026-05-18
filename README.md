@@ -4,10 +4,10 @@ A mobile-first hypercasual crowd-cannon/multiplier-gate game built for Vite + Ty
 
 ## Gameplay
 
-- Aimable cannon combat with smooth swipe/mouse steering.
-- Multiplier, rapid-fire, giant-mob, and bonus gates transform individual mobs in real time.
+- One-finger absolute drag aiming with aim assist so shots naturally sweep into gates and enemy clusters.
+- Continuous blue army squads run forward, steer toward gates, multiply, and hunt red enemy squads.
 - Gate passes trigger frame punches, camera shake, reward toasts, sounds, and pooled particles.
-- Enemy mobs, destructible blocks, and a rival base create the battle/destruction/reward beat.
+- Enemy mobs, destructible blocks, a wide battlefield, and a rival base create the battle/destruction/reward beat.
 - Coins persist in `localStorage` and feed cannon upgrade progression.
 
 ## Architecture
@@ -26,7 +26,7 @@ The source follows a production-oriented manager layout:
 
 - Dynamic DPR caps for mobile clarity without excessive fill cost.
 - No post-processing; lighting uses hemisphere + directional lights.
-- Reused primitive geometries/materials and pooled particles.
+- Instanced blue/red armies, reused primitive geometries/materials, and pooled particles.
 - Delta-time loop with capped steps to avoid large-frame jumps.
 - Cannon-es is initialized for lightweight physics hooks while crowd combat uses deterministic low-GC distance checks for mobile stability.
 

@@ -27,6 +27,7 @@ export class GameManager {
   private ending = false;
   private earned = 0;
   private levelLength = 100;
+  private lastGateFeedback = 0;
 
   constructor(canvas: HTMLCanvasElement) {
     this.scene = new GameScene(canvas);
@@ -99,10 +100,16 @@ export class GameManager {
   }
 
   private applyGate(gate: GateConfig): void {
+    const now = performance.now();
+    if (now - this.lastGateFeedback < 140) {
+      this.scene.cameraManager.punch(0.035);
+      return;
+    }
+    this.lastGateFeedback = now;
     const stats = { ...this.store.get().stats };
-    if (gate.kind === 'rapid') stats.fireRate += 0.03;
-    if (gate.kind === 'giant') stats.damage += 0.02;
-    if (gate.kind === 'bonus') stats.income += 0.02;
+    if (gate.kind === 'rapid') stats.fireRate += 0.04;
+    if (gate.kind === 'giant') stats.damage += 0.03;
+    if (gate.kind === 'bonus') stats.income += 0.03;
     this.store.set({ stats });
     this.scene.player.setColor(gate.color);
     this.scene.player.applyStats(stats);

@@ -20,7 +20,8 @@
         <div class="logo-orb"></div>
         <p class="eyebrow">Premium crowd battle</p>
         <h1>Crowd Cannon Clash</h1>
-        <p class="subtitle">Aim your cannon, fire stick mobs through multiplier gates, overwhelm enemies, and break the rival base.</p>
+        <p class="subtitle">Drag anywhere, launch huge blue armies through multiplier gates, wipe red mobs, and capture the rival base.</p>
+        <div class="feature-row"><span>Auto Aim</span><span>Army Rush</span><span>Base Raid</span></div>
         <button id="landing-play" class="primary-btn pulse">Play Now</button>
         <button id="install-btn" class="ghost-btn hidden">Install</button>
       </div>
@@ -38,7 +39,8 @@
       <div class="top-pill"><span>Coins</span><strong data-coins>0</strong></div>
       <div class="menu-panel">
         <h2>Level <span data-level>1</span></h2>
-        <p>Upgrade your cannon, multiply the crowd, and crush the enemy base.</p>
+        <p>One-finger aiming with assist. Your army steers into gates, hunts enemies, and floods the base.</p>
+        <div class="battle-preview"><div><strong>560</strong><small>mob cap</small></div><div><strong>4</strong><small>gate types</small></div><div><strong>1</strong><small>touch</small></div></div>
         <button id="play-btn" class="primary-btn">Play</button>
         <div class="menu-grid">
           <button id="skin-btn" class="mini-btn">Skins</button>
@@ -51,7 +53,7 @@
     <section id="hud" class="hud screen">
       <div class="hud-top">
         <div class="stat-chip">Lv <span data-level>1</span></div>
-        <div class="progress"><span id="progress-fill"></span></div>
+        <div class="progress-wrap"><small>Enemy Base</small><div class="progress"><span id="progress-fill"></span></div></div>
         <div class="stat-chip coin-chip">◈ <span data-coins>0</span></div>
       </div>
       <div class="live-stats">
@@ -60,6 +62,7 @@
         <div>MOBS <strong id="stat-crowd">1.0</strong></div>
         <div>$<strong id="stat-income">1</strong></div>
       </div>
+      <div class="aim-coach"><span>↔</span><strong>DRAG ANYWHERE TO SWEEP</strong><small>Aim assist locks mobs onto gates and enemies</small></div>
       <div id="toast-layer" class="toast-layer"></div>
     </section>
 
