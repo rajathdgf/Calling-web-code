@@ -1,0 +1,11 @@
+{
+  "name": "Crowd Cannon Clash",
+  "short_name": "CrowdClash",
+  "description": "A premium mobile crowd cannon and multiplier-gate web game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08132a",
+  "theme_color": "#55d6ff",
+  "orientation": "portrait-primary",
+  "icons": []
+}
