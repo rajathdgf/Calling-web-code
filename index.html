@@ -1,21 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big or Small Predictor</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Predict</h1>
-        <form id="predictor-form">
-            <input type="text" id="user-input" placeholder="Type something..." required>
-            <button type="submit">Submit</button>
-        </form>
-        <div id="loader" class="hidden">Loading...</div>
-        <div id="result" class="hidden"></div>
-    </div>
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#55d6ff" />
+    <meta name="description" content="Turbo Forge Run is a polished mobile-first hypercasual runner with modifiers, upgrades, destruction, and juicy rewards." />
+    <meta property="og:title" content="Turbo Forge Run" />
+    <meta property="og:description" content="Swipe, collect modifier gates, power up, and smash the finish arena." />
+    <meta property="og:type" content="website" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Turbo Forge Run</title>
+  </head>
+  <body>
+    <canvas id="game-canvas" aria-label="Turbo Forge Run game canvas"></canvas>
+
+    <main id="landing" class="landing screen visible">
+      <div class="brand-card">
+        <div class="logo-orb"></div>
+        <p class="eyebrow">Premium mobile runner</p>
+        <h1>Turbo Forge Run</h1>
+        <p class="subtitle">Swipe through modifier gates, evolve your core, and demolish the bonus arena.</p>
+        <button id="landing-play" class="primary-btn pulse">Play Now</button>
+        <button id="install-btn" class="ghost-btn hidden">Install</button>
+      </div>
+    </main>
+
+    <section id="loading" class="loading screen">
+      <div class="loading-card">
+        <div class="loading-title">Charging boost lanes</div>
+        <div class="bar"><span id="loading-fill"></span></div>
+        <p id="loading-tip">Prewarming materials and pooled VFX...</p>
+      </div>
+    </section>
+
+    <section id="menu" class="menu screen">
+      <div class="top-pill"><span>Coins</span><strong data-coins>0</strong></div>
+      <div class="menu-panel">
+        <h2>Level <span data-level>1</span></h2>
+        <p>Upgrade your forge core, then smash the finish vault.</p>
+        <button id="play-btn" class="primary-btn">Play</button>
+        <div class="menu-grid">
+          <button id="skin-btn" class="mini-btn">Skins</button>
+          <button id="upgrade-open-btn" class="mini-btn">Upgrade</button>
+          <button id="settings-btn" class="mini-btn">Sound</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="hud" class="hud screen">
+      <div class="hud-top">
+        <div class="stat-chip">Lv <span data-level>1</span></div>
+        <div class="progress"><span id="progress-fill"></span></div>
+        <div class="stat-chip coin-chip">◈ <span data-coins>0</span></div>
+      </div>
+      <div class="live-stats">
+        <div>SPD <strong id="stat-speed">1.0</strong></div>
+        <div>PWR <strong id="stat-power">1</strong></div>
+        <div>SZ <strong id="stat-size">1.0</strong></div>
+        <div>x<strong id="stat-multiplier">1</strong></div>
+      </div>
+      <div id="toast-layer" class="toast-layer"></div>
+    </section>
+
+    <section id="end-screen" class="end screen">
+      <div class="reward-card">
+        <p class="eyebrow">Run Complete</p>
+        <h2>Vault Smashed!</h2>
+        <div class="coin-burst">+<span id="earned-coins">0</span> ◈</div>
+        <button id="double-btn" class="primary-btn">Watch Ad: 2x Coins</button>
+        <button id="next-btn" class="ghost-btn">Next Level</button>
+      </div>
+    </section>
+
+    <section id="upgrade-modal" class="modal screen">
+      <div class="modal-card">
+        <button id="close-upgrades" class="close-btn">×</button>
+        <h2>Forge Upgrades</h2>
+        <div id="upgrade-list" class="upgrade-list"></div>
+      </div>
+    </section>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
