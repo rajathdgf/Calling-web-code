@@ -1,0 +1,11 @@
+{
+  "name": "Turbo Forge Run",
+  "short_name": "TurboForge",
+  "description": "A premium mobile runner, collector, and modifier web game.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08132a",
+  "theme_color": "#55d6ff",
+  "orientation": "portrait-primary",
+  "icons": []
+}
